@@ -1,20 +1,8 @@
 <template>
-  <ul class="list-unstyled">
-    <li v-for="scopeItem in scopeItemList" :key="`test-item-${scopeItem.id}`" class="row mb-2">
-        <div class="col-auto pe-0 create-btn">
-          <button type="button" class="btn btn-outline-primary btn-sm px-1 py-0 me-1">+</button>
-          <button type="button" class="btn btn-outline-primary btn-sm me-1 py-0" @click="isOpenEditor(scopeItem.id)">E</button>
-        </div>
-
-
-
-          <!-- <button type="button" class="btn btn-lg btn-danger fs-6" data-bs-toggle="popover" data-bs-title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?">
-            Click to toggle popover
-          </button> -->
-
-
-
-        <div class="col">
+  <div>
+    <ul class="list-unstyled">
+      <li v-for="scopeItem in scopeItemList" :key="`test-item-${scopeItem.id}`" class="row mb-2">
+        <div class="col position-relative border">
           <TheEditor v-if="editId === scopeItem.id"
             :scopeItem="scopeItem"
             :id="scopeItem.id"
@@ -23,31 +11,45 @@
             v-model:description="scopeItem.description" />
 
           <template v-else>
-            <TheAccordion v-if="scopeItem.type === 'accordion'"
-              :id="`${scopeItem.id}-test-item-content`" :title="scopeItem.description">
-              <TheListStyle v-model:editId="editId" :scopeItemList="scopeItem.sub" />
-            </TheAccordion>
+            <div class="list-item">
+              <div class="create-btn p-2
+                border border-primary rounded bg-light
+                position-absolute start-0"
+              >
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="position-absolute top-100 start-50 translate-middle mt-1" fill="var(--bs-primary)" xmlns="http://www.w3.org/2000/svg"><path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>
 
-            <template v-if="scopeItem.type === 'text'">
-              {{ scopeItem.description }}
-            </template>
+                <button type="button" class="btn btn-outline-primary btn-sm px-1 py-0 me-1">+</button>
+                <button type="button" class="btn btn-outline-primary btn-sm me-1 py-0" @click="isOpenEditor(scopeItem.id)">E</button>
+              </div>
 
-            <TheCheckbox v-else-if="scopeItem.type === 'checkbox'"
-              :id="`test-item-checkbox-${scopeItem.id}`" :content="scopeItem.description" />
 
-            <TheItemList v-else-if="scopeItem.type === 'list-inside'"
-              list-style="inside" :list="[scopeItem.description]" />
+              <TheAccordion v-if="scopeItem.type === 'accordion'"
+                :id="`${scopeItem.id}-test-item-content`" :title="scopeItem.description">
+                <TheListStyle v-model:editId="editId" :scopeItemList="scopeItem.sub" />
+              </TheAccordion>
 
-            <TheItemList v-else-if="scopeItem.type === 'list-number'"
-              list-style="number" :list="[scopeItem.description]" />
+              <template v-if="scopeItem.type === 'text'">
+                {{ scopeItem.description }}
+              </template>
+
+              <TheCheckbox v-else-if="scopeItem.type === 'checkbox'"
+                :id="`test-item-checkbox-${scopeItem.id}`" :content="scopeItem.description" />
+
+              <TheItemList v-else-if="scopeItem.type === 'list-inside'"
+                list-style="inside" :list="[scopeItem.description]" />
+
+              <TheItemList v-else-if="scopeItem.type === 'list-number'"
+                list-style="number" :list="[scopeItem.description]" />
+            </div>
           </template>
 
           <div v-if="scopeItem.type !== 'accordion' && scopeItem.sub.length > 0" class="ms-4">
             <TheListStyle v-model:editId="editId" :scopeItemList="scopeItem.sub" />
           </div>
         </div>
-    </li>
-  </ul>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -77,4 +79,13 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
+.create-btn {
+  display: none;
+  top: -50px;
+  z-index: 999;
+}
+
+.list-item:hover .create-btn, .create-btn:hover {
+  display: block;
+}
 </style>

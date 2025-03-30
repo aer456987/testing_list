@@ -1,0 +1,20 @@
+.btn-primary {
+  color: $light !important;
+}
+
+.btn-outline-primary {
+  &:hover {
+    color: $light !important;
+  }
+}
+
+.creat-new-test {
+  & .create-btn{
+    // display: none;
+  }
+  &:hover {
+    & .create-btn:first-child{
+      // display: block;
+    }
+  }
+}

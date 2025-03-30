@@ -1,4 +1,23 @@
-# 20250717-Testing List
+# Side Project - 用於紀錄測試項目的列表
+
+## 專案架構
+
+| 工具  | 版本 |
+| ----- | -------- |
+| [Node.js](https://nodejs.org/zh-tw) | v20.10 |
+| [vue](https://vuejs.org/) | v3.5.13 |
+| [Vite](https://cn.vite.dev/) | v6.2.1 |
+| [SASS](https://sass-lang.com/) | v1.63.6 |
+| [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)  | v5.3.3 |
+| [Bootstrap Icons](https://icons.getbootstrap.com/)  | v1.11.3 |
+| [Eslint](https://eslint.org/) | v9.21.0 |
+| [TypeScript](https://www.typescriptlang.org/) | v5.8.0 |
+
+<br/>
+
+---
+
+<br/>
 
 This template should help get you started developing with Vue 3 in Vite.
 

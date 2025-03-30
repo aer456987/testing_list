@@ -4,14 +4,31 @@
 
 | 工具  | 版本 |
 | ----- | -------- |
-| [Node.js](https://nodejs.org/zh-tw) | v20.10 |
-| [vue](https://vuejs.org/) | v3.5.13 |
-| [Vite](https://cn.vite.dev/) | v6.2.1 |
-| [SASS](https://sass-lang.com/) | v1.63.6 |
+| [Node.js](https://nodejs.org/zh-tw)                 | v20.10  |
+| [vue](https://vuejs.org/)                           | v3.5.13 |
+| [Vite](https://cn.vite.dev/)                        | v6.2.1  |
+| [SASS](https://sass-lang.com/)                      | v1.63.6 |
 | [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)  | v5.3.3 |
 | [Bootstrap Icons](https://icons.getbootstrap.com/)  | v1.11.3 |
-| [Eslint](https://eslint.org/) | v9.21.0 |
-| [TypeScript](https://www.typescriptlang.org/) | v5.8.0 |
+| [Eslint](https://eslint.org/)                       | v9.21.0 |
+| [TypeScript](https://www.typescriptlang.org/)       | v5.8.0  |
+
+<br/>
+
+---
+
+<br/>
+
+## Git Commit Type
+| Type        | 說明 |
+| -----       | -------- |
+| feat        | 新增/修改功能 ( Feature )                     |
+| fix         | 修正 Bug ( bug fix )                         |
+| docs        | 修改/新增文件 ( documentation )               |
+| style       | 修改程式碼格式或風格，不影響原有運作，例如 ESLint ( formatting, missing semi colons, … ) |
+| refactor    | 重構 or 優化，不屬於 bug 也不屬於新增功能等       |
+| test        | 增加測試功能 ( when adding missing tests )      |
+| chore       | 增加或修改第三方套件 ( 輔助工具 )等 ( maintain )  |
 
 <br/>
 
